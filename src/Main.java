@@ -42,16 +42,14 @@ public class Main {
         int Y = 12_000_000;
         int fertility = 17;
         int mortality = 8;
-        int year = 0;
-        int annualMortality = Y * mortality / 1000;
-        int annualFertility = Y * fertility / 1000;
+        int annualRate = fertility-mortality;
+        for (int i = 1; i <= 10; i++) {
 
-        while (year < 10) {
-            year = year + 1;
-            Y = Y + (annualFertility - annualMortality);
-            System.out.println("Год " + year + ", численность населения составляет " + Y);
-
+            Y+=Y / 1000* annualRate;
+            System.out.println( "Год " + i + " , численность населения составляет " + Y);
         }
+
+
 
     }
 
